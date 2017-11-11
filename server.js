@@ -21,7 +21,7 @@ var tableList = [
         "customerName": "table1",
         "phoneNumber": "12123123",
         "customerEmail": "someemail@email.com",
-        "customerID": "tableID"
+        "customerID": "tableIDtest"
     }
 ]
 
@@ -30,7 +30,7 @@ var waitList = [
         "customerName": "wait test",
         "phoneNumber": "1515565555",
         "customerEmail": "email@email.com",
-        "customerID": "WaitListID"
+        "customerID": "WaitListIDtest"
     }
 ]
 
@@ -77,7 +77,6 @@ function checkAvailabeTables(reservation, response){
 
     checkAvailabeTables(reservation, res);
     
-    res.json(reservation);
   });
 
 
