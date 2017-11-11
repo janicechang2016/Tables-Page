@@ -42,3 +42,7 @@ app.get("/", function(req, res) {
     // res.send("Welcome to the Star Wars Page!")
     res.sendFile(path.join(__dirname, "homePage.html"));
   });
+
+app.listen(PORT, function() {
+  console.log("App listening on PORT " + PORT);
+});
