@@ -56,14 +56,14 @@ app.get("/reserve", function(req, res) {
     res.sendFile(path.join(__dirname, "reservationForm.html"));
   });
 
-function checkAvailabeTables(reservation){
+function checkAvailabeTables(reservation, response){
     if(tableList.length<5){
         tableList.push(reservation);
-        return res.json({booked:true});
+        return response.json({booked:true});
     }
     else{
         waitList.push(reservation);
-        return res.json({booked:false});
+        return response.json({booked:false});
     }
 }
 
@@ -75,9 +75,8 @@ function checkAvailabeTables(reservation){
   
     console.log(reservation);
 
-    checkAvailabeTables(reservation);
+    checkAvailabeTables(reservation, res);
     
-  
     res.json(reservation);
   });
 
