@@ -56,6 +56,17 @@ app.get("/reserve", function(req, res) {
     res.sendFile(path.join(__dirname, "reservationForm.html"));
   });
 
+function checkAvailabeTables(){
+    if(tableList.length<5){
+        tableList.push(reservation);
+        return true 
+    }
+    else{
+        waitList.push(reservation);
+        return false 
+    }
+}
+
 // handle request from form 
   app.post("/api/tables", function(req, res) {
     // req.body hosts is equal to the JSON post sent from the user
@@ -64,7 +75,8 @@ app.get("/reserve", function(req, res) {
   
     console.log(reservation);
 
-    tableList.push(reservation);
+    checkAvailabeTables();
+    
   
     res.json(reservation);
   });
