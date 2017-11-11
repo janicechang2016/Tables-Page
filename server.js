@@ -56,7 +56,7 @@ app.get("/reserve", function(req, res) {
     res.sendFile(path.join(__dirname, "reservationForm.html"));
   });
 
-function checkAvailabeTables(){
+function checkAvailabeTables(reservation){
     if(tableList.length<5){
         tableList.push(reservation);
         return res.json({booked:true});
@@ -75,7 +75,7 @@ function checkAvailabeTables(){
   
     console.log(reservation);
 
-    checkAvailabeTables();
+    checkAvailabeTables(reservation);
     
   
     res.json(reservation);
