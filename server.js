@@ -44,17 +44,31 @@ app.get("/", function(req, res) {
   });
 
 // Route to the home page 
-app.get("/reservationViews.html", function(req, res) {
+app.get("/tables", function(req, res) {
     // res.send("Welcome to the Star Wars Page!")
     res.sendFile(path.join(__dirname, "reservationViews.html"));
   });
 
 
 // Route to the home page 
-app.get("/reservationForm.html", function(req, res) {
+app.get("/reserve", function(req, res) {
     // res.send("Welcome to the Star Wars Page!")
     res.sendFile(path.join(__dirname, "reservationForm.html"));
   });
+
+// handle request from form 
+  app.post("/api/tables", function(req, res) {
+    // req.body hosts is equal to the JSON post sent from the user
+    // This works because of our body-parser middleware
+    var reservation = req.body;
+  
+    console.log(reservation);
+
+    tableList.push(reservation);
+  
+    res.json(reservation);
+  });
+
 
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
