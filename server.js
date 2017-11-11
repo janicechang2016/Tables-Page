@@ -21,7 +21,7 @@ var tableList = [
         "customerName": "table1",
         "phoneNumber": "12123123",
         "customerEmail": "someemail@email.com",
-        "customerID": "1"
+        "customerID": "tableID"
     }
 ]
 
@@ -30,7 +30,7 @@ var waitList = [
         "customerName": "wait test",
         "phoneNumber": "1515565555",
         "customerEmail": "email@email.com",
-        "customerID": "1"
+        "customerID": "WaitListID"
     }
 ]
 
