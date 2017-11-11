@@ -43,6 +43,19 @@ app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "homePage.html"));
   });
 
+// Route to the home page 
+app.get("/reservationViews.html", function(req, res) {
+    // res.send("Welcome to the Star Wars Page!")
+    res.sendFile(path.join(__dirname, "reservationViews.html"));
+  });
+
+
+// Route to the home page 
+app.get("/reservationForm.html", function(req, res) {
+    // res.send("Welcome to the Star Wars Page!")
+    res.sendFile(path.join(__dirname, "reservationForm.html"));
+  });
+
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 });
